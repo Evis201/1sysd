@@ -13,6 +13,11 @@ int main() {
         printf("Votre proposition : ");
         scanf("%d", &tentative);
         
+         if (tentative < 0) {
+            printf("Veuillez entrer un nombre positif.\n");
+            continue;
+        }
+        
         nombreEssais++;
 
         if (tentative < nombreAleatoire) {
