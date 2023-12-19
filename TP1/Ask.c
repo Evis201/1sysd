@@ -4,10 +4,10 @@
 
 int main() {
     srand(time(NULL));
-    int nombreAleatoire = rand() % 10 + 1;
+    int nombreAleatoire = rand() % 100 + 1;
     int tentative, nombreEssais = 0;
     
-    printf("Devinez le nombre entre 1 et 10\n");
+    printf("Devinez le nombre entre 1 et 100\n");
 
     do {
         printf("Votre proposition : ");
