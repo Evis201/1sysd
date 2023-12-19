@@ -11,14 +11,15 @@ int main() {
     do {
         printf("Votre proposition : ");
         scanf("%d", &tentative);
-
         nombreEssais++;
 
         if (tentative < nombreAleatoire) {
             printf("Plus grand !\n");
-        } else if (tentative > nombreAleatoire) {
+        } 
+        else if (tentative > nombreAleatoire) {
             printf("Plus petit !\n");
-        } else {
+        } 
+        else {
             printf("Bravo ! Vous avez trouvé le nombre en %d essais.\n", nombreEssais);
         }
 
