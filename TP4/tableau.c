@@ -5,7 +5,7 @@ int main() {
     float moyenne = 0;
     int plusPetit, plusGrand;
 
-    printf("Veuillez entrer 5 nombres (maximum 50):\n");
+    printf("Veuillez entrer 5 nombres maximum 50:\n");
 
     for (int i = 0; i < 5; ++i) {
         printf("Nombre %d : ", i + 1);
