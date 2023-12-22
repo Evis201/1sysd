@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-PROGS=math
+PROGS=tableau
 CC=gcc
 CFLAGS=
 
