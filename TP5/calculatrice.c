@@ -14,7 +14,6 @@ int main(int argc, char *argv[]) {
     nombre1 = strtod(argv[1], NULL);
     nombre2 = strtod(argv[2], NULL);
 
-    // Calcul en fonction de l'opérateur
     switch (operateur) {
         case '+':
             resultat = nombre1 + nombre2;
@@ -29,7 +28,7 @@ int main(int argc, char *argv[]) {
             if (nombre2 != 0) {
                 resultat = nombre1 / nombre2;
             } else {
-                printf("Erreur : Division par zéro.\n");
+                printf("Division par zéro impossible.\n");
                 return 1;
             }
             break;
