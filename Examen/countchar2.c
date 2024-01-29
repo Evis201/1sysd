@@ -1,20 +1,47 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
 
-int count_char(char* chaine, char car) {
-    int count = 0;
-    for (int i=0; chaine[i] !='\0'; i++) {
-        if (chaine[i] == car) {
-            count++;
+int count_char(char *str, char o) {
+    int c = 0;
+
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] == o) {
+            c++;
         }
+        i++;
     }
-    return count;
+
+    return c;
 }
 
-int main(int argc, char* argv[]) {
-    char* chaine = argv[1];
-    char car = argv[2][0];
+int main(int argc, char *argv[]) {
+    if (argc < 3 || argc > 4) {
+        printf("Utilisation : <string> <char> [-i]\n");
+        return 1;
+    }
 
-    printf("%d\n", count_char(chaine, car));
+    if (strlen(argv[2]) != 1) {
+        printf("Le second argument doit être un caractère à rechercher\n");
+        return 1;
+    }
+
+    int case_sensitive = 1;
+    if (argc == 4 && strcmp(argv[3], "-i") == 0) {
+        case_sensitive = 2; // 2 = ignore case sensitive
+    }
+
+    int count = count_char(argv[1], argv[2][0]);
+    if (case_sensitive == 2) {
+        for (int c = 0; argv[1][c]; c++) {
+            argv[1][c] = tolower(argv[1][c]);
+        }
+        argv[2][0] = tolower(argv[2][0]);
+        count = count_char(argv[1], argv[2][0]);
+    }
+
+    printf("Nombre d'occurences: %d\n", count);
+
     return 0;
 }

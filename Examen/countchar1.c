@@ -12,9 +12,14 @@ int count_char(char* chaine, char car) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc < 3 || argc > 4) {
+        printf("Utilisation : <chaine> <char>\n");
+        return 1;
+    }
+        
     char* chaine = argv[1];
     char car = argv[2][0];
 
-    printf("%d\n", count_char(chaine, car));
+    printf("Nombre d'occurences : %d\n", count_char(chaine, car));
     return 0;
 }
