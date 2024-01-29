@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <unistd.h>
+#include<unistd.h>
 
 typedef struct node node;
 struct node {
@@ -59,6 +59,7 @@ int main() {
     print_list_slow(head);
 }
 
+/*
 int has_loop(node *head) {
     node *fast = head;
     node *slow = head;
@@ -74,3 +75,7 @@ int has_loop(node *head) {
 
     return 0;
 }
+*/
+//Algorithme des pointeurs "fast" et du "slow" pour détecter une boucle dans une liste chaînée. 
+//Elle parcourt la liste en utilisant deux pointeurs l'un progresse plus vite que l'autre et vérifie ils se recontrent. 
+//Si ils se rencontrent c'est qu'il ya une boucle dans la liste chinée.
