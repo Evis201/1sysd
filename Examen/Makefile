@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-PROGS=tconvert countchar1 countchar2
+PROGS=tconvert countchar1 countchar2 revert revert2 intlist countint
 CC=gcc
 CFLAGS=
 
