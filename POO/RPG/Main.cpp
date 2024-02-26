@@ -1,9 +1,9 @@
-#include "Character.hpp"
-#include "Weapon.hpp"
+#include "Character.cpp"
+#include "Weapon.cpp"
 
 int main() {
     Weapon geraltWeapon("Épée", 30);
-    Weapon yenneferWeapon("Baton", 25);
+    Weapon yenneferWeapon("Bâton", 25);
 
     Character geralt("Geralt", 100, 100, geraltWeapon);
     Character yennefer("Yennefer", 100, 100, yenneferWeapon);
@@ -17,6 +17,34 @@ int main() {
     yennefer.display();
 
     yennefer.takeLifePotion(20);
+
+    geralt.display();
+    yennefer.display();
+
+    yennefer.switchWeapon("Boule de feu", 35);
+    yennefer.attack(geralt);
+
+    geralt.display();
+    yennefer.display();
+
+    geralt.switchWeapon("Épée en argent", 40);
+    geralt.attack(yennefer);
+
+    geralt.display();
+    yennefer.display();
+
+    yennefer.takeLifePotion(20);
+    yennefer.attack(geralt);
+
+    geralt.display();
+    yennefer.display();
+
+    yennefer.attack(geralt);
+
+    geralt.display();
+    yennefer.display();
+
+    yennefer.attack(geralt);
 
     geralt.display();
     yennefer.display();

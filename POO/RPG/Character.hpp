@@ -1,5 +1,6 @@
 #include "Weapon.hpp"
 #include <string>
+#pragma once
 
 // Création de la classe Character
 class Character {
