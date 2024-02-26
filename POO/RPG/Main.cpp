@@ -21,7 +21,7 @@ int main() {
     geralt.display();
     yennefer.display();
 
-    yennefer.switchWeapon("Boule de feu", 25);
+    yennefer.switchWeapon("Boule de feu", 40);
     yennefer.attack(geralt);
 
     geralt.display();
@@ -39,6 +39,7 @@ int main() {
     geralt.display();
     yennefer.display();
 
+    yennefer.switchWeapon("Déluge de feu", 60);
     yennefer.attack(geralt);
 
     geralt.display();

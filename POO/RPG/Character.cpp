@@ -28,7 +28,7 @@ void Character::receiveDammages(int dammages)
 
 void Character::attack(Character &target)
 {
-    target.receiveDammages(25);
+    target.receiveDammages(equipedWeapon.getDammages());
 }
 
 void Character::takeLifePotion(int lifePoints)
