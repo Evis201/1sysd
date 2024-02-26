@@ -21,13 +21,13 @@ int main() {
     geralt.display();
     yennefer.display();
 
-    yennefer.switchWeapon("Boule de feu", 35);
+    yennefer.switchWeapon("Boule de feu", 25);
     yennefer.attack(geralt);
 
     geralt.display();
     yennefer.display();
 
-    geralt.switchWeapon("Épée en argent", 40);
+    geralt.switchWeapon("Épée en argent", 30);
     geralt.attack(yennefer);
 
     geralt.display();
