@@ -56,14 +56,10 @@ void loop() {
     }
 }
 
-// CODE POUR LIRE LA TEMPÉRATURE ET L'HUMIDITÉ
-
-// Code pour générer une température aléatoire
 float generateRandomTemperature() {
     return random(0, 100);
 }
 
-// Code pour générer une humidité aléatoire
 float generateRandomHumidity() {
     return random(0, 100);
 }

@@ -33,7 +33,6 @@ void setup() {
 
 // CODE PRINCIPAL
 
-
 void loop() {
     int reading = digitalRead(BUTTON_PIN);
     if (reading != lastButtonState) {
