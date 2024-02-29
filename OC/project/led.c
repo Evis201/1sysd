@@ -1,9 +1,9 @@
 #include <Wire.h>
 
-#define LED_PIN1 6
-#define LED_PIN2 7
-#define LED_PIN3 8
-#define LED_PIN4 9
+#define LED_PIN1 7
+#define LED_PIN2 8
+#define LED_PIN3 9
+#define LED_PIN4 10
 
 void setup() {
     pinMode(LED_PIN1, OUTPUT);
