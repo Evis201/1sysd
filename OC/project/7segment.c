@@ -53,10 +53,8 @@ void setup(){
 void loop(){
   digitalWrite(trans_dix, HIGH);
   digitalWrite(trans_unite, LOW);
-	for (int i = 0; i < 10; ++i){
-		writeRegister(digit_dix[i], digit_unite[i]);
-		delay(1000);
-	}
+	writeRegister(digit_dix[4], digit_unite[3]);
+	delay(1000);
 }
 
 void writeRegister(int digit_dix, int digit_unite){
