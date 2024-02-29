@@ -1,8 +1,8 @@
-#include <Wire.h>
+#include <Arduino.h>
 
 #define REGISTER_CLOCK  4
-#define PIN_DATA  		2
-#define SERIAL_CLOCK  	3
+#define PIN_DATA        2
+#define SERIAL_CLOCK    3
 
 int digit[10]={
 	B11111100, // 0
@@ -23,10 +23,10 @@ void writeRegister(int digit);
 // Programme initial
 void setup(){
 	// Définition des pins comme sortie
-	for (int i = 5; i <= 7 ; ++i){
+	for (int i = 2; i <= 4 ; ++i){
 		pinMode(i,OUTPUT);
 		digitalWrite(i,LOW);
-	}	
+	}   
 }
 
 // programme principal
@@ -37,18 +37,15 @@ void loop(){
 	}
 }
 
-
 void writeRegister(int digit){
-
-    // Préparation du registre à recevoir les données
-    digitalWrite(REGISTER_CLOCK,LOW);
-    // Ecriture des données
-    for (int i = 0; i < 8; ++i){
-        digitalWrite(SERIAL_CLOCK,LOW);
-        digitalWrite(PIN_DATA,bitRead(digit,i)); // donnée à envoyer
-        digitalWrite(SERIAL_CLOCK,HIGH);
-    }
-    // Mise à jour des sorties du registre
-    digitalWrite(REGISTER_CLOCK,HIGH);
-
+	// Préparation du registre à recevoir les données
+	digitalWrite(REGISTER_CLOCK,LOW);
+	// Ecriture des données
+	for (int i = 0; i < 8; ++i){
+		digitalWrite(SERIAL_CLOCK,LOW);
+		digitalWrite(PIN_DATA,bitRead(digit,i)); // donnée à envoyer
+		digitalWrite(SERIAL_CLOCK,HIGH);
+	}
+	// Mise à jour des sorties du registre
+	digitalWrite(REGISTER_CLOCK,HIGH);
 }
