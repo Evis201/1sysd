@@ -1,79 +1,65 @@
+#include <DHT.h>
+#include <DHT_U.h>
 #include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_LEDBackpack.h>
 
-// DEFINE VARIABLES
+#define DHTPIN 2          // Pin numérique connectée au capteur DHT
+#define DHTTYPE DHT11     // DHT 11
+#define BUTTON_PIN 7      // Pin pour le bouton
+#define RESISTOR_PIN A0   // PIN analogique connectée à la résistance
+#define DISP_NUM 2        // Nombre d'afficheurs 7 segments
+#define DECODER_ADDRESS 0x70 // Adresse I2C du décodeur 74HC959
 
-#define BUTTON_PIN 3 // quelle broche digitale est connectée au bouton
-#define DISPLAY_PIN 4 // quelle broche digitale est connectée à l'afficheur
+DHT_Unified dht(DHTPIN, DHTTYPE);
 
-Adafruit_7segment matrix = Adafruit_7segment();
-
-// Initialisation du capteur aléatoire d'humidité et température
-
-int randomSensorPin = A0; // Pin du capteur aléatoire
-float randomTemperature = 0.0;
-float randomHumidity = 0.0;
-
-int buttonState = 0;
-int lastButtonState = 0;
-unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = 50;
-long lastPressTime = 0;
-bool displayOn = false;
-
-// CODE SETUP
+byte digit[10] = {
+    0b00111111, // 0
+    0b00000110, // 1
+    0b01011011, // 2
+    0b01001111, // 3
+    0b01100110, // 4
+    0b01101101, // 5
+    0b01111101, // 6
+    0b00000111, // 7
+    0b01111111, // 8
+    0b01101111  // 9
+};
 
 void setup() {
-    pinMode(BUTTON_PIN, INPUT);
-    pinMode(DISPLAY_PIN, OUTPUT);
-    matrix.begin(0x70);  // pass in the address
+    Wire.begin();                // Initialise le bus I2C
+    dht.begin();                 // Initialise le capteur DHT
+    pinMode(BUTTON_PIN, INPUT_PULLUP); // Définit la Pin du bouton en entrée avec une résistance de rappel
+    pinMode(RESISTOR_PIN, INPUT); // Définit la Pin de la résistance en entrée
+    displayOff();                // Éteint les afficheurs initialement
 }
-
-// CODE PRINCIPAL
 
 void loop() {
-    int reading = digitalRead(BUTTON_PIN);
-    if (reading != lastButtonState) {
-        lastDebounceTime = millis();
-    }
-    if ((millis() - lastDebounceTime) > debounceDelay) {
-        if (reading != buttonState) {
-            buttonState = reading;
-            if (buttonState == HIGH) {
-                long pressDuration = millis() - lastPressTime;
-                if (pressDuration < 2000) {
-                    displayTemperature();
-                } else {
-                    displayHumidity();
-                }
-            }
-        }
-    }
-    lastButtonState = reading;
+    int buttonState = digitalRead(BUTTON_PIN);
     if (buttonState == LOW) {
-        lastPressTime = millis();
+        int resistorValue = analogRead(RESISTOR_PIN); // Lit la valeur de la résistance
+        displayTemperature(resistorValue);
     }
 }
 
-float generateRandomTemperature() {
-    return random(0, 100);
+void displayTemperature(int resistorValue) {
+    sensors_event_t event;
+    dht.temperature().getEvent(&event);
+    if (!isnan(event.temperature)) {
+        int temp = int(event.temperature);
+        displayNumber(temp / 10, 0); // Affiche la dizaine
+        displayNumber(temp % 10, 1); // Affiche l'unité
+        displayNumber(resistorValue / 100, 2); // Affiche la centaine de la valeur de la résistance
+    }
 }
 
-float generateRandomHumidity() {
-    return random(0, 100);
+void displayNumber(int num, int disp) {
+    Wire.beginTransmission(DECODER_ADDRESS);
+    Wire.write(1 << disp);
+    Wire.write(digit[num]);
+    Wire.endTransmission();
 }
 
-// Code pour afficher la température aléatoire sur votre afficheur
-void displayTemperature() {
-    randomTemperature = generateRandomTemperature();
-    matrix.print(randomTemperature, 1);
-    matrix.writeDisplay();
-}
-
-// Code pour afficher l'humidité aléatoire sur votre afficheur
-void displayHumidity() {
-    randomHumidity = generateRandomHumidity();
-    matrix.print(randomHumidity, 1);
-    matrix.writeDisplay();
+void displayOff() {
+    for (int i = 0; i < DISP_NUM; i++) {
+        displayNumber(10, i);
+    }
 }

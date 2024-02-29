@@ -1,6 +1,5 @@
 #include <Wire.h>
 
-
 #define REGISTER_CLOCK  5
 #define PIN_DATA  		6
 #define SERIAL_CLOCK  	7
