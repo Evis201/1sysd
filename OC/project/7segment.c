@@ -2,7 +2,7 @@
 
 #define REGISTER_CLOCK  4
 #define PIN_DATA  		2
-#define SERIAL_CLOCK  	11
+#define SERIAL_CLOCK  	3
 
 int digit[10]={
 	B11111100, // 0
