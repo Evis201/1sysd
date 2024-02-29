@@ -1,9 +1,8 @@
 #include <Wire.h>
 
-#define REGISTER_CLOCK  5
-#define PIN_DATA  		6
-#define SERIAL_CLOCK  	7
-#define RESISTOR_PIN 8
+#define REGISTER_CLOCK  4
+#define PIN_DATA  		2
+#define SERIAL_CLOCK  	11
 
 int digit[10]={
 	B11111100, // 0
@@ -27,7 +26,6 @@ void setup(){
 	for (int i = 5; i <= 7 ; ++i){
 		pinMode(i,OUTPUT);
 		digitalWrite(i,LOW);
-		pinMode(RESISTOR_PIN, OUTPUT);
 	}	
 }
 
@@ -41,8 +39,6 @@ void loop(){
 
 
 void writeRegister(int digit){
-    // Activate the resistor
-    digitalWrite(RESISTOR_PIN, HIGH);
 
     // Préparation du registre à recevoir les données
     digitalWrite(REGISTER_CLOCK,LOW);
@@ -55,6 +51,4 @@ void writeRegister(int digit){
     // Mise à jour des sorties du registre
     digitalWrite(REGISTER_CLOCK,HIGH);
 
-    // Deactivate the resistor
-    digitalWrite(RESISTOR_PIN, LOW);
 }
