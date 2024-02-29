@@ -3,6 +3,7 @@
 #define REGISTER_CLOCK  5
 #define PIN_DATA  		6
 #define SERIAL_CLOCK  	7
+#define RESISTOR_PIN 8
 
 int digit[10]={
 	B11111100, // 0
@@ -26,6 +27,7 @@ void setup(){
 	for (int i = 5; i <= 7 ; ++i){
 		pinMode(i,OUTPUT);
 		digitalWrite(i,LOW);
+		pinMode(RESISTOR_PIN, OUTPUT);
 	}	
 }
 
@@ -38,23 +40,21 @@ void loop(){
 }
 
 
-/*
-	Cette fonction permet d'écrire dans le registre 
-	et mets ensuite les sorties à jour.
-
-	Parametre :
-		int digit : ensemble de bits à envoyer
-		ex : B11111100 
-*/
 void writeRegister(int digit){
-	// Préparation du registre à recevoir les données
-	digitalWrite(REGISTER_CLOCK,LOW);
-	// Ecriture des données
-	for (int i = 0; i < 8; ++i){
-		digitalWrite(SERIAL_CLOCK,LOW);
-		digitalWrite(PIN_DATA,bitRead(digit,i)); // donnée à envoyer
-		digitalWrite(SERIAL_CLOCK,HIGH);
-	}
-	// Mise à jour des sorties du registre
-	digitalWrite(REGISTER_CLOCK,HIGH);
+    // Activate the resistor
+    digitalWrite(RESISTOR_PIN, HIGH);
+
+    // Préparation du registre à recevoir les données
+    digitalWrite(REGISTER_CLOCK,LOW);
+    // Ecriture des données
+    for (int i = 0; i < 8; ++i){
+        digitalWrite(SERIAL_CLOCK,LOW);
+        digitalWrite(PIN_DATA,bitRead(digit,i)); // donnée à envoyer
+        digitalWrite(SERIAL_CLOCK,HIGH);
+    }
+    // Mise à jour des sorties du registre
+    digitalWrite(REGISTER_CLOCK,HIGH);
+
+    // Deactivate the resistor
+    digitalWrite(RESISTOR_PIN, LOW);
 }
