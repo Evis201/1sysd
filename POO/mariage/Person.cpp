@@ -9,12 +9,13 @@ protected:
     Person* partner;
 
 public:
-    std::string name;
+    std::string FirstName;
+    std::string LastName;
     
-    Person(std::string n, int a) : name(n), age(a), partner(nullptr) {}
+    Person(std::string fn, std::string ln, int a) : FirstName(fn), LastName(ln), age(a), partner(nullptr) {}
 
     virtual void display() {
-        std::cout << name << " a " << age << " ans. ";
+        std::cout << FirstName << " " << LastName << " a " << age << " ans. ";
     }
 
     void setPartner(Person* p) {
@@ -30,28 +31,28 @@ public:
 
 class Woman : public Person {
 public:
-    Woman(std::string n, int a) : Person(n, a) {}
+    Woman(std::string fn, std::string ln, int a) : Person(fn, ln, a) {}
 
     void display() override {
         Person::display();
         if (isSingle()) {
             std::cout << "Elle est célibataire.\n";
         } else {
-            std::cout << "Elle est mariée à " << partner->name << ".\n";
+            std::cout << "Elle est mariée à " << partner->FirstName << " " << partner->LastName << ".\n";
         }
     }
 };
 
 class Man : public Person {
 public:
-    Man(std::string n, int a) : Person(n, a) {}
+    Man(std::string fn, std::string ln, int a) : Person(fn, ln, a) {}
 
     void display() override {
         Person::display();
         if (isSingle()) {
             std::cout << "Il est célibataire.\n";
         } else {
-            std::cout << "Il est marié à " << partner->name << ".\n";
+            std::cout << "Il est marié à " << partner->FirstName << " " << partner->LastName << ".\n";
         }
     }
 };
