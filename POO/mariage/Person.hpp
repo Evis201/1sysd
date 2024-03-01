@@ -18,6 +18,7 @@ public:
     void setLastName(std::string lastName);
     int getAge();
     void setAge(int newAge);
+
     virtual void display();
 
 };

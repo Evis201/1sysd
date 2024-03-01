@@ -1,9 +1,12 @@
 // Create by Evis201 on 01/03/2024
 #include "Person.hpp"
-#include <utility>
 #include <iostream>
 
-Person::Person() {}
+Person::Person() {
+    this->firstName = "Noé";
+    this->lastName = "Lecocq";
+    this->age = 18;
+}
 
 Person::Person(std::string firstName, std::string lastName, int age) {
     this->firstName = std::move(firstName);
