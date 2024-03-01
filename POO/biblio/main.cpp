@@ -1,8 +1,8 @@
-#include "Document.cpp"
+#include "Book.hpp"
 
 int main() {
-    Document document("Le Seigneur des Anneaux", "J.R.R. Tolkien", 1954);
-    document.display();
+    Book bookOne("Le Seigneur des Anneaux", "J.R.R. Tolkien", 1954, "B001", 1000);
+    bookOne.display();
 
     return 0;
 }
