@@ -1,4 +1,5 @@
 #include "Document.hpp"
+#pragma once
 
 class Book : public Document {
 private:
@@ -12,6 +13,6 @@ public:
     int getYearOfPublication() const;
     std::string getIdentifierCode() const;
 
-    void display() const override;
-    bool isBorrowable() const override;
+    void display() const;
+    bool isBorrowable() const;
 };

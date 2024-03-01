@@ -14,3 +14,4 @@ void Book::display() const {
 
 bool Book::isBorrowable() const {
     return true;
+}
