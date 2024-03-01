@@ -1,13 +1,14 @@
 // Create by Evis201 on 01/03/2024
-
-#include "Person.cpp"
+#include "Man.hpp"
+#include "Women.hpp"
+#include <iostream>
 
 int main() {
     Woman naoki("Naoki", "De Gusta", 37);
     Man alex("Alex", "De La jsp", 34);
     Man john("John", "Je sais pas", 40);
 
-    naoki.setPartner(&alex);
+    naoki.setPartner(alex);
 
     naoki.display();
     alex.display();
