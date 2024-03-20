@@ -15,5 +15,5 @@ double Triangle::perimeter() const
 
 double Triangle::area() const
 {
-    return 0.5 * base * height;
+    return (base * height) / 2;
 }
