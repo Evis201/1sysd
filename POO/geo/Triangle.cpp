@@ -10,8 +10,7 @@ void Triangle::display() const
 
 double Triangle::perimeter() const
 {
-    // Implémentation à définir
-    return 0;
+    return base + (height * 2);
 }
 
 double Triangle::area() const
