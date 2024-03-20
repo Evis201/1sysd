@@ -17,8 +17,8 @@ int main()
     for (Figure *figure : figures)
     {
         figure->display();
-        std::cout << "Perimeter: " << figure->perimeter() << std::endl;
-        std::cout << "Area: " << figure->area() << std::endl;
+        std::cout << "Périmètre: " << figure->perimeter() << std::endl;
+        std::cout << "Air: " << figure->area() << std::endl;
         delete figure;
     }
 
