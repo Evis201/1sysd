@@ -2,14 +2,15 @@
 #include "Person.hpp"
 #pragma once
 
-class Woman : public Person {
+class Woman : public Person
+{
 protected:
-    Person* partner;
-    
+    Person *partner;
+
 public:
     Woman(std::string firstName, std::string lastName, int age);
     bool isSingle();
-    Person* getPartner();
-    void setPartner(Person* newPartner);
+    Person *getPartner();
+    void setPartner(Person *newPartner);
     void display() override;
 };
