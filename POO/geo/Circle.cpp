@@ -4,14 +4,17 @@
 
 Circle::Circle(double radius) : radius(radius) {}
 
-void Circle::display() const {
+void Circle::display() const
+{
     std::cout << "Je suis un cercle" << std::endl;
 }
 
-double Circle::perimeter() const {
+double Circle::perimeter() const
+{
     return 2 * M_PI * radius;
 }
 
-double Circle::area() const {
+double Circle::area() const
+{
     return M_PI * radius * radius;
 }

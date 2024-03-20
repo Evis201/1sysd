@@ -3,9 +3,10 @@
 #include "Figure.hpp"
 #include <iostream>
 
-
-class Circle : public Figure {
+class Circle : public Figure
+{
     double radius;
+
 public:
     Circle(double radius);
     void display() const override;

@@ -8,5 +8,5 @@ public:
     virtual void display() const;
     virtual double perimeter() const = 0;
     virtual double area() const = 0;
-    virtual ~Figure() {};
+    virtual ~Figure(){};
 };

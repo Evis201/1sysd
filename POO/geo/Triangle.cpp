@@ -3,15 +3,18 @@
 
 Triangle::Triangle(double base, double height) : base(base), height(height) {}
 
-void Triangle::display() const {
+void Triangle::display() const
+{
     std::cout << "Je suis un triangle" << std::endl;
 }
 
-double Triangle::perimeter() const {
+double Triangle::perimeter() const
+{
     // Implémentation à définir
     return 0;
 }
 
-double Triangle::area() const {
+double Triangle::area() const
+{
     return 0.5 * base * height;
 }

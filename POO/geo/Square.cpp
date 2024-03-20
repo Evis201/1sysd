@@ -3,14 +3,17 @@
 
 Square::Square(double length) : length(length) {}
 
-void Square::display() const {
+void Square::display() const
+{
     std::cout << "Je suis un carré" << std::endl;
 }
 
-double Square::perimeter() const {
+double Square::perimeter() const
+{
     return 4 * length;
 }
 
-double Square::area() const {
+double Square::area() const
+{
     return length * length;
 }

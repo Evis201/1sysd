@@ -2,8 +2,10 @@
 #include "Figure.hpp"
 #include <iostream>
 
-class Square : public Figure {
+class Square : public Figure
+{
     double length;
+
 public:
     Square(double length);
     void display() const override;

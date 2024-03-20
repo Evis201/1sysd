@@ -2,8 +2,10 @@
 #include "Figure.hpp"
 #include <iostream>
 
-class Rectangle : public Figure {
+class Rectangle : public Figure
+{
     double length, width;
+
 public:
     Rectangle(double length, double width);
     void display() const override;

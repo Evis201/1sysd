@@ -2,8 +2,10 @@
 #include "Figure.hpp"
 #include <iostream>
 
-class Triangle : public Figure {
+class Triangle : public Figure
+{
     double base, height;
+
 public:
     Triangle(double base, double height);
     void display() const override;
