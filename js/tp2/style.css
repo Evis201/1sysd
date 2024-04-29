@@ -1,0 +1,153 @@
+body {
+    background: white;
+}
+
+.Index {
+    width: 1920px;
+    height: 847px;
+    position: relative;
+}
+
+.TopMain {
+    width: 1920px;
+    height: 847px;
+    position: absolute;
+    opacity: 0.90;
+    background: rgba(30, 40, 50, 0.05);
+}
+
+.FlowerPattern {
+    width: 2033.88px;
+    height: 372.68px;
+    position: absolute;
+}
+
+.Frame {
+    position: absolute;
+    transform-origin: 0 0;
+}
+
+.Vector {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.Product {
+    width: 1226px;
+    height: 562px;
+    position: absolute;
+}
+
+.ImageProduct {
+    width: 442px;
+    height: 562px;
+    position: absolute;
+}
+
+.Rectangle124 {
+    width: 424px;
+    height: 542px;
+    position: absolute;
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
+    border: 2px rgba(0, 0, 0, 0.25) solid;
+}
+
+.Img19 {
+    width: 424px;
+    height: 542px;
+    position: absolute;
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Content {
+    width: 360px;
+    height: 364px;
+    position: absolute;
+}
+
+.Collections {
+    position: absolute;
+    color: black;
+    font-size: 74px;
+    font-family: Roboto;
+    font-weight: 300;
+    text-transform: capitalize;
+    line-height: 55px;
+    word-wrap: break-word;
+}
+
+.InsertTextHereZzzz {
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 55px;
+    word-wrap: break-word;
+}
+
+.Button {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.V6IconFree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Icon {
+    text-align: center;
+    font-family: Font Awesome 6 Free;
+    font-weight: 900;
+    word-wrap: break-word;
+}
+
+.ShopNow {
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.Header {
+    position: absolute;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.TopHeader {
+    width: 1320px;
+    height: 59px;
+    position: relative;
+}
+
+.Line1 {
+    width: 1320px;
+    height: 0px;
+    position: absolute;
+    border: 1px #E3E3E3 solid;
+}
+
+.Account {
+    width: 221px;
+    height: 25px;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
