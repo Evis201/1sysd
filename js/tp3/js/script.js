@@ -26,14 +26,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let deleteButton = document.createElement('button');
         deleteButton.textContent = 'Supprimer';
         deleteButton.className = 'delete-button';
-    
+
+        let editButton = document.createElement('button');
+        editButton.textContent = 'Modifier';
+        editButton.className = 'edit-button';
+
         deleteButton.addEventListener('click', function() {
             removeTodo(todo.id);
             todoList.removeChild(li);
         });
+
+        editButton.addEventListener('click', function() {
+
+        });
     
         li.appendChild(deleteButton);
         todoList.appendChild(li);
+
+        editButton.addEventListener('click', function() {
+            let newTask = prompt('Entrez la nouvelle tâche', todo.text);
+            if (newTask !== null && newTask.trim() !== '') {
+                todo.text = newTask;
+                li.textContent = newTask + " ";
+                li.appendChild(deleteButton);
+                li.appendChild(editButton);
+            }
+        });
+        
+        li.appendChild(editButton);
     }
 
     document.getElementById('addTaskButton').addEventListener('click', function() {
