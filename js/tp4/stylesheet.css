@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#posts-container {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check:checked ~ ul {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: #3a3a3a;
+        top: 50px;
+        left: 0;
+        display: none;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+}
+
+#search {
+    margin: 10px;
+    padding: 5px;
+}
