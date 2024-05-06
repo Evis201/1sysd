@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <head>
-    <!-- ... -->
+    <title>Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">Logo</label>
-        <ul>
-            <li><a class="active" href="index.html">Acceuil</a></li>
-            <li><a href="#">A propos</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="contact.html">Contacts</a></li>
-            <li><a href="#">Retours</a></li>
-        </ul>
-    </nav>
+    <div class="mobile-container">
+        <div class="topnav">
+            <a href="index.html" class="active">Logo</a>
+            <div id="myLinks">
+                <a href="#news">News</a>
+                <a href="contact.html">Contact</a>
+                <a href="#about">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="openBurgerMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
     <div id="page-contact">
         <form id="contact-form">
             <label for="name">Prénom:</label><br>
@@ -28,6 +28,7 @@
             <input type="submit" value="Inscription">
         </form>
     </div>
+    <button id="theme-switch">Switch Theme</button>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
