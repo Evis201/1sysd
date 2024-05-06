@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             removeTodo(todo.id);
             todoList.removeChild(li);
         });
-
-        editButton.addEventListener('click', function() {
-
-        });
     
         li.appendChild(deleteButton);
         todoList.appendChild(li);
@@ -54,7 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
         
         li.appendChild(editButton);
-    }
+    } 
 
     document.getElementById('addTaskButton').addEventListener('click', function() {
         let taskInput = document.getElementById('taskInput');
