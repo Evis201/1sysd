@@ -33,5 +33,5 @@ int main() {
 
     display_histogram_vert(tab, size);
 
-    // return 0;
+    //return 0;
 }
