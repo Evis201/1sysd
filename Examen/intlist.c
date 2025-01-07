@@ -63,6 +63,14 @@ node *removelast(node *head) {
     return head;
 }
 
+void double_list(node *head) {
+    node *walk = head;
+    while (walk != NULL) {
+        walk->val *= 2;
+        walk = walk->next;
+    }
+}
+
 int main() {
     node *head = NULL;
     node *empty = NULL;
