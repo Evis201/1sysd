@@ -45,7 +45,24 @@ node *append_val(node *head, int val) {
     return head;
 }
 
-// TODO: à vous
+// Function to remove the last element from the linked list
+node *removelast(node *head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+    node *walk = head;
+    while (walk->next->next != NULL) {
+        walk = walk->next;
+    }
+    free(walk->next);
+    walk->next = NULL;
+    return head;
+}
+
 void double_list(node *head) {
     node *walk = head;
     while (walk != NULL) {
