@@ -48,6 +48,7 @@ node *append_val(node *head, int val) {
 // TODO: à vous
 node *removelast(node *head) {
     if (head == NULL) {
+        printf("La liste est vide.\n");
         return NULL;
     }
     if (head->next == NULL) {
