@@ -1,8 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 
 void display_histogram(int tab[], int size) {
-    // TODO : compléter
-
+    // Valeur maximale 
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < tab[i]; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
 }
 
 int main() {
@@ -10,5 +15,6 @@ int main() {
 
     display_histogram(values, 9);
 
+    // return 0;
 }
 

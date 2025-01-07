@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-// TODO: à vous
+// TODO: à vous !
 int n_letters(char *s) {
     int count = 0;
     while (*s) {
@@ -22,5 +22,5 @@ int main(int argc, char *argv[]) {
     int count = n_letters(argv[1]);
     printf("%d\n", count);
 
-    return 0;
+    // return 0;
 }

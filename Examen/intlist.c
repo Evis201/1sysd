@@ -45,6 +45,14 @@ node *append_val(node *head, int val) {
     return head;
 }
 
+// TODO: à vous
+void double_list(node *head) {
+    node *walk = head;
+    while (walk != NULL) {
+        walk->val *= 2;
+        walk = walk->next;
+    }
+}
 
 int main() {
     node *head = NULL;
@@ -62,13 +70,17 @@ int main() {
 
     print_list(head);
 
+    // Double la list et affiche
+    double_list(head);
+    print_list(head);
+
     // code test pour remove last
-    // head = removelast(head);
-    // print_list(head);
+    head = removelast(head);
+    print_list(head);
 
     // Et si la liste est vide ?
-    // empty = removelast(empty);
-    // print_list(empty);
+    empty = removelast(empty);
+    print_list(empty);
 
 
 }
