@@ -45,7 +45,7 @@ node *append_val(node *head, int val) {
     return head;
 }
 
-// Function to remove the last element from the linked list
+// TODO: à vous
 node *removelast(node *head) {
     if (head == NULL) {
         return NULL;
