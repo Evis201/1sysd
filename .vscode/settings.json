@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "C_Cpp.default.compilerPath": "gcc",
   "files.associations": {
+    "*.embeddedhtml": "html",
     "iostream": "cpp",
     "array": "cpp",
     "atomic": "cpp",
@@ -102,6 +103,8 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "cstdarg": "cpp"
+    "cstdarg": "cpp",
+    "ctype.h": "c",
+    "stdio.h": "c"
   }
 }
